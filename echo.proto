@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "github.com/churmd/go-grcp-example/echo";
+
+message EchoRequest {
+    string body = 1;
+} 
+
+message EchoResponse {
+    EchoRequest request = 1;
+}
+
+service EchoService {
+    rpc Echo(EchoRequest) returns (EchoResponse);
+}
